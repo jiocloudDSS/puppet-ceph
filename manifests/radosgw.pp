@@ -93,7 +93,7 @@ class ceph::radosgw (
     rgw_keystone_token_api       => $rgw_keystone_token_api,
     rgw_multipart_part_upload_limit  => $rgw_multipart_part_upload_limit,
     rgw_kms_encrypt_url          => $rgw_kms_encrypt_url,
-    rgw_kms_decrypt_url          => $rgw_kms_encrypt_url,
+    rgw_kms_decrypt_url          => $rgw_kms_decrypt_url,
   }
 
   package { 'radosgw':
