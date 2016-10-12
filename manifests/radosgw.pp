@@ -55,6 +55,8 @@ class ceph::radosgw (
   $rgw_keystone_sign_api        = 'sign-auth',
   $rgw_keystone_token_api       = 'token-auth',
   $rgw_multipart_part_upload_limit,
+  $rgw_kms_encrypt_url,
+  $rgw_kms_decrypt_url,
 ) {
 
   if ! $radosgw_keyring {
@@ -90,6 +92,8 @@ class ceph::radosgw (
     rgw_keystone_sign_api        => $rgw_keystone_sign_api,
     rgw_keystone_token_api       => $rgw_keystone_token_api,
     rgw_multipart_part_upload_limit  => $rgw_multipart_part_upload_limit,
+    rgw_kms_encrypt_url          => $rgw_kms_encrypt_url,
+    rgw_kms_decrypt_url          => $rgw_kms_encrypt_url,
   }
 
   package { 'radosgw':
