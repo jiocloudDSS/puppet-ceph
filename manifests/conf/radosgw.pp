@@ -21,6 +21,8 @@ define ceph::conf::radosgw (
   $rgw_keystone_sign_api,
   $rgw_keystone_token_api,
   $rgw_multipart_part_upload_limit,
+  $rgw_kms_encrypt_url,
+  $rgw_kms_decrypt_url,
 ) {
 
   ceph_config {
@@ -43,7 +45,9 @@ define ceph::conf::radosgw (
     'client.radosgw.gateway/rgw obj stripe size': value => $rgw_obj_stripe_size, tag => "rgw_config";
     'client.radosgw.gateway/rgw frontends': value => $rgw_frontends, tag => "rgw_config";
     'client.radosgw.gateway/rgw cors allowed origin': value => $rgw_cors_allowed_origin, tag => "rgw_config";
-    'client.radosgw.gateway/rgw multipart part upload limit': value => $rgw_multipart_part_upload_limit, tag => "rgw_config"
+    'client.radosgw.gateway/rgw multipart part upload limit': value => $rgw_multipart_part_upload_limit, tag => "rgw_config";
+    'client.radosgw.gateway/rgw kms encrypt url': value => $rgw_kms_encrypt_url, tag => "rgw_config";
+    'client.radosgw.gateway/rgw kms decrypt url': value => $rgw_kms_decrypt_url, tag => "rgw_config"
   }
 
   if $ceph_radosgw_listen_ssl {
